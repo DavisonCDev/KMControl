@@ -1,0 +1,443 @@
+/* Fonte e estilo geral */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;  /* Organiza os elementos na coluna */
+    height: 100vh;  /* Garante que o body ocupe toda a altura da janela */
+    background-color: #f4f4f9;
+}
+
+/* Container do título KM Control */
+.container {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 100%;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    box-sizing: border-box;
+    z-index: 10; /* Fixa o título acima dos outros elementos */
+}
+
+/* Estilo do título KM Control */
+h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #666;
+    margin: 0;
+}
+
+/* Estilo do texto */
+p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* Responsividade - Animação do container */
+.container {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Definição da animação fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Container principal para os botões e tabela (flexbox) */
+.main-content {
+    display: flex;
+    justify-content: flex-start; /* Alinha os containers de botões e tabela à esquerda */
+    gap: 20px; /* Espaço entre o container dos botões e o da tabela */
+    margin-top: 50px; /* Distância abaixo do título */
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* Container de botões (à esquerda) */
+.buttons-container {
+    display: flex;
+    flex-direction: column; /* Empilha os botões verticalmente */
+    gap: 10px;
+    width: 250px; /* Largura fixa para o container dos botões */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* Estilo para o título "Menu" */
+#titulo-menu {
+    font-size: 24px; /* Tamanho da fonte */
+    font-weight: bold; /* Peso da fonte */
+    color: #444; /* Cor do texto */
+    margin-bottom: 20px; /* Espaço abaixo do título */
+    text-align: center; /* Centraliza o título */
+}
+/* Botões gerais da tela inicial (com a classe .btn) */
+.btn {
+    background-color: #4a86e0;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Efeitos de transição */
+    min-width: 120px;
+}
+
+/* Efeito de hover para os botões da tela inicial */
+.btn:hover {
+    background-color: #4a86e0;
+    transform: scale(1.1); /* Aumenta o botão ao passar o mouse */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra suave */
+}
+
+/* Estilo para o botão Cancelar (botão cinza) */
+.form-buttons .btn-cancel {
+    background-color: #808080; /* Cor cinza */
+    color: white; /* Cor do texto branca */
+    border: none;
+    padding: 15px 25px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Efeitos de transição */
+}
+    /* Efeito de hover para o botão Cancelar */
+.form-buttons .btn-cancel:hover {
+    background-color: #666666; /* Cor cinza mais escuro ao passar o mouse */
+    transform: scale(1.05); /* Aumenta o botão levemente */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+/* Container para a tabela (à direita) */
+.table-container {
+    display: flex;
+    justify-content: center; /* Centraliza a tabela horizontalmente */
+    align-items: flex-start; /* Alinha a tabela ao topo */
+    flex-grow: 1; /* Faz com que o container da tabela ocupe o restante do espaço */
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+#contratos-table {
+    width: 100%;
+    border-collapse: collapse; /* Faz com que as bordas se unam */
+    margin-top: 20px;
+}
+
+#contratos-table th, #contratos-table td {
+    border: 1px solid #ddd; /* Borda fina e clara */
+    padding: 10px; /* Espaciamento interno nas células */
+    text-align: left; /* Alinha o texto à esquerda */
+    font-size: 1rem; /* Fonte mais simples e legível */
+}
+
+#contratos-table th {
+    background-color: #f4f4f9; /* Cor de fundo para os cabeçalhos */
+    color: #666; /* Cor do texto no cabeçalho */
+    font-weight: bold; /* Negrito no cabeçalho */
+}
+
+#contratos-container {
+    display: block; /* Garante que o conteúdo dentro do container seja exibido como blocos */
+    margin-bottom: 20px; /* Adiciona espaço abaixo do contêiner para separar o título da tabela */
+}
+
+/* Tabela Contratos */
+
+#titulo-contratos {
+    font-size: 24px; /* Tamanho da fonte */
+    font-weight: bold; /* Peso da fonte */
+    color: #444; /* Cor do texto */
+    margin-bottom: 20px; /* Espaço abaixo do título */
+    text-align: center; /* Centraliza o título, se necessário */
+}
+
+/* Linha verde (kmExcedido e fazerRevisao são false) */
+#contratos-table tbody tr.green-row {
+    background-color: #7fdd82; /* Cor verde */
+    color: #444; /* Cor do texto em branco */
+}
+
+/* Linha amarela (fazerRevisao é true) */
+#contratos-table tbody tr.yellow-row {
+    background-color: #fef498; /* Cor amarela */
+    color: #444; /* Cor do texto em preto */
+}
+
+/* Linha vermelha (kmExcedido ou fazerRevisao são true) */
+#contratos-table tbody tr.red-row {
+    background-color: #f88f88; /* Cor vermelha */
+    color: #444; /* Cor do texto em branco */
+}
+
+/* Estilos do formulário de novo contrato */
+.form-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none; /* Inicialmente escondido */
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro semitransparente */
+    z-index: 20;
+}
+
+.form-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    max-height: 80%;
+    overflow-y: auto; /* Barra de rolagem */
+}
+
+.form-content h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.form-content label {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.form-content input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+/* Estilos do formulário de substituição de veículo */
+.form-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none; /* Inicialmente escondido */
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro semitransparente */
+    z-index: 20;
+}
+
+.form-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    max-height: 80%;
+    overflow-y: auto; /* Barra de rolagem */
+}
+
+.form-content h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.form-content label {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.form-content input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-buttons .btn {
+    width: 48%;
+}
+
+/* Modal Histórico */
+#modal-historico {
+    display: none; /* Inicialmente oculto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 1200px;
+    overflow-x: auto;
+    font-size: 0.9rem; /* Fonte menor */
+}
+
+.modal-content h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Modal Histórico */
+#modal-historico {
+    display: none; /* Inicialmente oculto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 1200px;
+    overflow-x: auto;
+    font-size: 0.9rem; /* Fonte menor */
+}
+
+.modal-content h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Tabela do Histórico */
+#historico-tabela {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#historico-tabela th, #historico-tabela td {
+    border: 1px solid #ddd;
+    padding: 6px;
+    text-align: left;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#historico-tabela th {
+    background-color: #f4f4f9;
+    font-weight: bold;
+}
+
+/* Mini Modal para os Botões de Navegação */
+#modal-botoes {
+    display: none; /* Inicialmente oculto */
+    position: fixed;
+    bottom: 20px;  /* Fica 20px acima da parte inferior da tela */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1010; /* Fica acima do modal histórico */
+}
+
+#pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#pagination-container button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efeitos de transição */
+}
+
+/* Efeito de hover para os botões de navegação */
+#pagination-container button:hover {
+    transform: scale(1.1); /* Aumenta o botão ao passar o mouse */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra suave */
+}
+
+#pagination-container button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+#pagination-container span {
+    margin: 0 10px;
+    font-size: 1.1rem;
+}
+
+/* Estilo exclusivo para o botão Fechar - Garantindo que o estilo do botão Fechar seja isolado */
+#btn-close-modal {
+    background-color: #d9534f !important; /* Garantindo a cor vermelha */
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover para o botão Fechar */
+#btn-close-modal:hover {
+    background-color: #c9302c; /* Tom de vermelho mais escuro ao passar o mouse */
+    transform: scale(1.05); /* Aumenta o botão levemente */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+/* Garantir que o botão Fechar não herde estilos de outros botões */
+#modal-historico button {
+    all: unset; /* Desativa todos os estilos herdados */
+    background-color: initial;
+}
+
+
+
+
+
+
+

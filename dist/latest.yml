@@ -1,0 +1,8 @@
+version: 1.0.0
+files:
+  - url: km-control-Setup-1.0.0.exe
+    sha512: 9r8Arc4aEJy0Xgs48AvJRvtXzlgzYt5XTBXSepPBC+Xchs+8zOVE4zznYONuDzzZkXkXJIHwjzymK9R0+COLOQ==
+    size: 81604453
+path: km-control-Setup-1.0.0.exe
+sha512: 9r8Arc4aEJy0Xgs48AvJRvtXzlgzYt5XTBXSepPBC+Xchs+8zOVE4zznYONuDzzZkXkXJIHwjzymK9R0+COLOQ==
+releaseDate: '2024-12-05T03:12:34.889Z'

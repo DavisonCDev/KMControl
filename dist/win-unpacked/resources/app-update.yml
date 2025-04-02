@@ -1,0 +1,4 @@
+owner: DavisonCDev
+repo: km-control
+provider: github
+updaterCacheDirName: km-control-updater

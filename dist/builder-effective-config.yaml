@@ -1,0 +1,10 @@
+directories:
+  output: dist
+  buildResources: build
+appId: com.example.kmcontrol
+mac:
+  category: public.app-category.utilities
+win:
+  target: nsis
+files: []
+electronVersion: 33.2.0

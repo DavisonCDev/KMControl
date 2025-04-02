@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KM Control</title>
+
+    <!-- Importando a fonte moderna do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Link para o arquivo CSS separado -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- Container com o título -->
+    <div class="container">
+        <h1>KM Control</h1>
+        <p>Developed by OK Smart</p>
+    </div>
+
+    <!-- Container principal com botões à esquerda e tabela à direita -->
+    <div class="main-content">
+        <div id="titulo-menu">
+            <h2>Menu</h2>
+        <!-- Container com os botões -->
+        <div class="buttons-container">
+                <button class="btn" id="btn-add-contract">Add Contrato</button>
+                <button class="btn" id="btn-update-km">Atualizar KM</button> <!-- Botão Atualizar KM -->
+                <button class="btn" id="btn-fazer-revisao">Fazer Revisão</button>
+                <button class="btn" id="btn-substituir-veiculo">Substituir Veículo</button>
+                <button class="btn" id="btn-apagar-contrato">Apagar Contrato</button>
+                <button class="btn" id="btn-historico">Histórico</button>
+            </div>
+        </div>
+
+        <!-- Container com a tabela -->
+        <div class="table-container">
+            <div id="contratos-container">
+                <h2 id="titulo-contratos">Contratos Ativos</h2>
+                <table id="contratos-table">
+                    <thead>
+                        <tr>
+                            <th>Nº Contrato</th>
+                            <th>Placa</th>
+                            <th>Modelo</th>
+                            <th>Condutor Responsável</th>
+                            <th>KM Ideal</th>
+                            <th>KM Atual</th>
+                            <th>Vencimento</th>
+                            <th>Observações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Os dados serão inseridos aqui via JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Formulário de Novo Contrato (oculto inicialmente) -->
+    <div id="form-container" class="form-container">
+        <div class="form-content">
+            <h2>Novo Contrato</h2>
+            <form id="form-add-contract">
+                <label for="condutorPrincipal">Condutor Principal</label>
+                <input type="text" id="condutorPrincipal" name="condutorPrincipal" required>
+
+                <label for="condutorResponsavel">Condutor Responsável</label>
+                <input type="text" id="condutorResponsavel" name="condutorResponsavel" required>
+
+                <label for="dataRegistro">Data Registro</label>
+                <input type="date" id="dataRegistro" name="dataRegistro" required>
+
+                <label for="diarias">Diárias</label>
+                <input type="number" id="diarias" name="diarias" required>
+
+                <label for="franquiaKm">Franquia Km</label>
+                <input type="number" id="franquiaKm" name="franquiaKm" required>
+
+                <label for="kmAtual">KM Atual</label>
+                <input type="number" id="kmAtual" name="kmAtual" required>
+
+                <label for="kmInicial">KM Inicial</label>
+                <input type="number" id="kmInicial" name="kmInicial" required>
+
+                <label for="locadora">Locadora</label>
+                <input type="text" id="locadora" name="locadora" required>
+
+                <label for="marca">Marca</label>
+                <input type="text" id="marca" name="marca" required>
+
+                <label for="modelo">Modelo</label>
+                <input type="text" id="modelo" name="modelo" required>
+
+                <label for="numeroContrato">Número do Contrato</label>
+                <input type="text" id="numeroContrato" name="numeroContrato" required>
+
+                <label for="osCliente">OS Cliente</label>
+                <input type="text" id="osCliente" name="osCliente" required>
+
+                <label for="placa">Placa</label>
+                <input type="text" id="placa" name="placa" required>
+
+                <label for="valorAluguel">Valor Aluguel</label>
+                <input type="number" id="valorAluguel" name="valorAluguel" required>
+
+                <!-- Botões para enviar ou cancelar -->
+                <div class="form-buttons">
+                    <button type="submit" class="btn" id="btn-submit">Adicionar</button>
+                    <button type="button" class="btn btn-cancel" id="btn-cancel">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Formulário para Atualizar KM (oculto inicialmente) -->
+    <div id="form-update-km-container" class="form-container">
+        <div class="form-content">
+            <h2>Atualizar KM</h2>
+            <form id="form-update-km">
+                <label for="placa-update">Placa</label>
+                <input type="text" id="placa-update" name="placa" required>
+
+                <label for="kmAtual-update">KM Atual</label>
+                <input type="number" id="kmAtual-update" name="kmAtual" required>
+
+                <!-- Botões para enviar ou cancelar -->
+                <div class="form-buttons">
+                    <button type="submit" class="btn" id="btn-update">Atualizar</button>
+                    <button type="button" class="btn btn-cancel" id="btn-cancel-update">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Formulário de Substituição de Veículo (oculto inicialmente) -->
+    <div id="form-substituir-veiculo" class="form-container">
+        <div class="form-content">
+            <h2>Substituição de Veículo</h2>
+            <form id="form-substituir-veiculo-data">
+                <label for="numeroContrato">Número do Contrato</label>
+                <input type="text" id="numeroContrato" name="numeroContrato" required>
+
+                <label for="dataSubstituicao">Data da Substituição</label>
+                <input type="date" id="dataSubstituicao" name="dataSubstituicao" required>
+
+                <label for="placa">Placa</label>
+                <input type="text" id="placa" name="placa" required>
+
+                <label for="marca">Marca</label>
+                <input type="text" id="marca" name="marca" required>
+
+                <label for="modelo">Modelo</label>
+                <input type="text" id="modelo" name="modelo" required>
+
+                <label for="kmInicial">KM Inicial</label>
+                <input type="number" id="kmInicial" name="kmInicial" required>
+
+                <!-- Botões para enviar ou cancelar -->
+                <div class="form-buttons">
+                    <button type="submit" class="btn" id="btn-substituir">Substituir</button>
+                    <button type="button" class="btn btn-cancel" id="btn-cancel-substituir">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Formulário de Fazer Revisão (oculto inicialmente) -->
+    <div id="form-revisao-container" class="form-container">
+        <div class="form-content">
+            <h2>Fazer Revisão</h2>
+            <form id="form-fazer-revisao">
+                <label for="placa">Placa</label>
+                <input type="text" id="placa" name="placa" required>
+
+                <!-- Botões para enviar ou cancelar -->
+                <div class="form-buttons">
+                    <button type="submit" class="btn" id="btn-confirmar">Confirmar</button>
+                    <button type="button" class="btn btn-cancel" id="btn-cancel-revisao">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Formulário de Apagar Contrato (oculto inicialmente) -->
+    <div id="form-apagar-contrato" class="form-container">
+        <div class="form-content">
+            <h2>Apagar Contrato</h2>
+            <form id="form-apagar-contrato-data">
+                <label for="numeroContrato">Número do Contrato</label>
+                <input type="text" id="numeroContrato" name="numeroContrato" required>
+
+                <!-- Botões para enviar ou cancelar -->
+                <div class="form-buttons">
+                    <button type="submit" class="btn" id="btn-apagar">Apagar</button>
+                    <button type="button" class="btn btn-cancel" id="btn-cancel-apagar">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Histórico -->
+    <div id="modal-historico" class="modal">
+        <div class="modal-content">
+            <h2>Histórico de Contratos</h2>
+            <table id="historico-tabela">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Condutor Principal</th>
+                        <th>Condutor Responsável</th>
+                        <th>Data Atual</th>
+                        <th>Data Registro</th>
+                        <th>Data Vigência</th>
+                        <th>Data Substituição</th>
+                        <th>Diárias</th>
+                        <th>Franquia KM</th>
+                        <th>KM Atual</th>
+                        <th>KM Inicial</th>
+                        <th>Locadora</th>
+                        <th>Marca</th>
+                        <th>Modelo</th>
+                        <th>Número Contrato</th>
+                        <th>OS Cliente</th>
+                        <th>Placa</th>
+                        <th>Valor Aluguel</th>
+                        <th>Fazer Revisão</th>
+                        <th>KM Excedido</th>
+                        <th>KM Ideal</th>
+                        <th>KM Semana</th>
+                        <th>KM Média Mensal</th>
+                        <th>Meses Veículo</th>
+                        <th>Meses Contrato</th>
+                        <th>Saldo KM</th>
+                        <th>Acumulado Mês</th>
+                        <th>Entrega Prop Data</th>
+                        <th>Contador Revisão</th>
+                        <th>Observações</th>
+                    </tr>
+                </thead>
+                <tbody id="historico-tabela-body">
+                    <!-- Os dados dos contratos serão inseridos aqui dinamicamente -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Mini Modal para Botões de Navegação -->
+    <div id="modal-botoes" class="modal">
+        <div class="modal-content">
+            <div id="pagination-container">
+                <button id="prev-page">Anterior</button>
+                <span id="page-number">Página 1</span>
+                <button id="next-page">Próxima</button>
+                <button id="btn-close-modal" class="btn-close-modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link para o arquivo JS separado -->
+    <script src="js/app.js"></script>
+</body>
+
+</html>
